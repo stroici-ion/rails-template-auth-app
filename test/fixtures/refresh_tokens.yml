@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  crypted_token: MyString
+  expires_at: 2026-04-12 21:57:51
+  ip_address: MyString
+  user_agent: MyString
+  revoked_at: 2026-04-12 21:57:51
+
+two:
+  user: two
+  crypted_token: MyString
+  expires_at: 2026-04-12 21:57:51
+  ip_address: MyString
+  user_agent: MyString
+  revoked_at: 2026-04-12 21:57:51
