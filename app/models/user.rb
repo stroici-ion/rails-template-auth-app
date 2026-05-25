@@ -3,6 +3,8 @@ class User < ApplicationRecord
     has_one_attached :avatar
     before_create :generate_confirmation_token
     has_many :refresh_tokens, dependent: :destroy
+    has_many :task_assignments
+    has_many :tasks, through: :task_assignments
 
     validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: URI::MailTo::EMAIL_REGEXP }
     validates :password, presence: true, on: :create, if: -> { google_id.blank? }

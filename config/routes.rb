@@ -23,6 +23,16 @@ Rails.application.routes.draw do
 
       get 'users/me', to: 'users#me'
       patch 'users/update_profile', to: 'users#update_profile'
+
+      resources :projects do
+        resources :tasks, only: [:index, :create] do
+          collection do
+            patch :reorder
+          end
+        end
+      end
+      
+      resources :tasks, only: [:show, :update, :destroy]
     end
   end
 end
